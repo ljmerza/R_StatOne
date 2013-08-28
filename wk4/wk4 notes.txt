@@ -1,0 +1,32 @@
+#mediation and moderation analysis
+
+library(psych)
+library(multilevel)
+
+data<-read.table(file.choose(), header=T)
+
+descirbe(data)
+
+layout(mtrix(c()
+hist(data$)
+hist(data$)
+hist(data$)
+
+plot(data$ ~ data$)
+abline(lm(data$ ~ data$))
+
+#mediation
+model1=lm(data$ ~ data$)
+summary(model1)
+model2=lm(data$ ~ data$)
+summary(model2)
+indirect = sobel(data$, data$)
+indirect
+
+#moderation
+no.data.model = lm(data$ ~ data$ + data$)
+summary(data.model)
+data.model=lm(data$ ~ data$ + data$ + data$data)
+summary(data.model)
+#compare models
+anova(no.data.model,data,model)

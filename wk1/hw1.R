@@ -1,0 +1,28 @@
+#Leonardo Merza Stat 1 hw 1
+#read data, plot histogram, get descriptive
+
+library(psych)
+
+results <- read.table ("data.TXT", header=T)
+
+class(results)
+
+groupdes <- subset(results, subset=(cond=="des"))
+groupaer <- subset(results, subset=(cond=="aer"))
+
+aerobic$cond<-NULL
+designed$cond<-NULL
+
+layout(matrix(c(1:8), 2,4, byrow=TRUE))
+
+hist(groupdes$pre.wm.s, xlab="Pre Work Mem Spatial")
+hist(groupdes$post.wm.s, xlab="Post Work Mem Spatial")
+hist(groupdes$pre.wm.v, xlab="Pre Work Mem Verbal")
+hist(groupdes$post.wm.v, xlab="Post Work Mem Verbal")
+hist(groupaer$pre.wm.s, xlab="Pre Work Mem Spatial")
+hist(groupaer$post.wm.s, xlab="Post Work Mem Spatial")
+hist(groupaer$pre.wm.v, xlab="Pre Work Mem Verbal")
+hist(groupaer$post.wm.v, xlab="Post Work Mem Verbal")
+
+describe(groupdes)
+describe(groupaer)
